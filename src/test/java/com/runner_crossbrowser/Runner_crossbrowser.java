@@ -10,7 +10,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\main\\resources",glue="com.stepdefination_crossbrowser",tags="@InvalidUserName",monochrome=true,plugin= {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:Reports","pretty","html:Report/HTMLReport.html" })
+@CucumberOptions(features="src\\main\\resources",glue="com.stepdefination_crossbrowser",tags="@validLogin",monochrome=true,plugin= {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:Reports","pretty","html:Report/HTMLReport.html" })
 
 public class Runner_crossbrowser {
 	
@@ -23,6 +23,7 @@ public static WebDriver driver;
 
 	@AfterClass
 	public static void tear_down() {
+		System.out.println("close the browser");
 		driver.close();
 	}
 
